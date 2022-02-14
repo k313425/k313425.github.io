@@ -5,11 +5,11 @@
   const FRAME_RATE = 60
   const PARTICLE_NUM = 2000
   const RADIUS = Math.PI * 2
-  const CANVASWIDTH = 500
-  const CANVASHEIGHT = 150
+  const CANVASWIDTH = window.innerWidth || 500
+  const CANVASHEIGHT = window.innerHeight / 2 || 500
   const CANVASID = 'canvas'
 
-  let texts = ['❤生日快乐❤', '抬头看夜空中那颗微亮的星', '不用去怀疑那颗星星这就是你', '只是还低沉可爱的你散发着魅力', '停下脚步驻足欣赏你', '希望你每天都可以开开心心', '不用被烦恼压抑伤心遮蔽', '尽量要早睡又早起不伤身体', '年轻是资本但是也别不在意', '期待某一天我们的第一次相遇', '会不会互相嫌弃的满脸有趣', '未来会发生些什么谁能确定', '但是我相信我自己更相信你', '最后祝你生日开心快乐无比', '些许压抑的旋律不要太在意', '小小心意请你收下不成敬意', '真幸运认识彼此优秀的自己']
+  let texts = ['❤生日快乐❤', '抬头看夜空中', '那颗微亮的星', '不用去怀疑', '那星星就是你', '低沉可爱的你', '散发着魅力', '停下脚步', '驻足欣赏你', '期待某一天', '我们再次相遇', '祝你生日开心', '快乐无比', '真幸运认识你', '我的小世界']
 
   let canvas,
     ctx,
@@ -17,7 +17,7 @@
     quiver = true,
     text = texts[0],
     textIndex = 0,
-    textSize = 70
+    textSize = 55
 
   function draw () {
     ctx.clearRect(0, 0, CANVASWIDTH, CANVASHEIGHT)
@@ -105,13 +105,13 @@
   }
 
   function setDimensions () {
-    canvas.width = CANVASWIDTH
-    canvas.height = CANVASHEIGHT
+    canvas.width = CANVASWIDTH * 0.93
+    canvas.height = CANVASHEIGHT * 0.9
     canvas.style.position = 'absolute'
-    canvas.style.left = '0%'
-    canvas.style.top = '0%'
-    canvas.style.bottom = '0%'
-    canvas.style.right = '0%'
+    canvas.style.left = '2%'
+    canvas.style.top = '5%'
+    canvas.style.bottom = '5%'
+    canvas.style.right = '5%'
     canvas.style.marginTop = window.innerHeight * .15 + 'px'
   }
 
@@ -126,15 +126,15 @@
       console.log(textIndex)
     }, false)
 
-    document.addEventListener('touchstart', function (e) {
-      textIndex++
-      if (textIndex >= texts.length) {
-        textIndex--
-        return
-      }
-      text = texts[textIndex]
-      console.log(textIndex)
-    }, false)
+    // document.addEventListener('touchstart', function (e) {
+    //   textIndex++
+    //   if (textIndex >= texts.length) {
+    //     textIndex--
+    //     return
+    //   }
+    //   text = texts[textIndex]
+    //   console.log(textIndex)
+    // }, false)
   }
 
   function init () {
@@ -211,7 +211,8 @@
   
   var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     if(!isChrome){
-      $('#iframeAudio').remove()
+			let e = document.querySelector('#iframeAudio'); 
+			e.remove();
   }
   
   // setTimeout(() => {
