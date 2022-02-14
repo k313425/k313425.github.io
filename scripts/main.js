@@ -9,7 +9,7 @@
   const CANVASHEIGHT = 150
   const CANVASID = 'canvas'
 
-  let texts = ['MY DEAR', 'LOOK UP AT THE', 'STARRY SKY', 'ARE YOU', 'LOOKING AT THE', 'SAME STAR', 'WITH ME ?', 'HAPPY', 'CHINESE', 'VALENTINE\'S', 'DAY', 'I MISS YOU']
+  let texts = ['❤生日快乐❤', '抬头看夜空中那颗微亮的星', '不用去怀疑那颗星星这就是你', '只是还低沉可爱的你散发着魅力', '停下脚步驻足欣赏你', '希望你每天都可以开开心心', '不用被烦恼压抑伤心遮蔽', '尽量要早睡又早起不伤身体', '年轻是资本但是也别不在意', '期待某一天我们的第一次相遇', '会不会互相嫌弃的满脸有趣', '未来会发生些什么谁能确定', '但是我相信我自己更相信你', '最后祝你生日开心快乐无比', '些许压抑的旋律不要太在意', '小小心意请你收下不成敬意', '真幸运认识彼此优秀的自己']
 
   let canvas,
     ctx,
